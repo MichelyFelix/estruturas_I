@@ -13,8 +13,15 @@ int main(void){
         scanf("%d",&quantidade);
 
     char *sexo = (char*)calloc(quantidade,sizeof(char));
+        if (sexo == NULL){
+            printf("erro de alocacao");
+            exit(1);
+        }
     char *opiniao = (char*)calloc(quantidade,sizeof(char));
-
+        if (opiniao == NULL){
+            printf("erro de alocacao");
+            exit(1);
+        }
 
     for (int contador = 0; contador < quantidade; contador++){
         printf("Pessoa %d\n",contador + 1);
