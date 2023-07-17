@@ -3,10 +3,10 @@
 #include<string.h>
 
 typedef struct funcionario{
-    char nome_funcionario;
+    char nome_funcionario[30];
     float salario;
     int identificador;
-    char cargo;
+    char cargo[30];
 }Funcionario;
 
     void preencher(Funcionario *pessoa){//preenche as informações do funcionário
@@ -21,11 +21,11 @@ typedef struct funcionario{
     }
 
     void imprimir(Funcionario *pessoa){//imprime as informações do funcionário
-        printf("NOME DO FUNCIONARIO:%s\t SALARIO:%f\t IDENTIFICADOR:%d\t CARGO:%s\t",pessoa->nome_funcionario, pessoa->salario, pessoa->identificador, pessoa->cargo);
+        printf("NOME DO FUNCIONARIO:%s\n SALARIO:%.2f\n IDENTIFICADOR:%d\n CARGO:%s\n",pessoa->nome_funcionario, pessoa->salario, pessoa->identificador, pessoa->cargo);
     }
 
     void alterar_salario(Funcionario *pessoa, float novo_salario){
-        pessoa->salario += novo_salario;
+        pessoa->salario = novo_salario;
     }
 
     void maior_menor(Funcionario *pessoa, int tamanho){
@@ -39,22 +39,28 @@ typedef struct funcionario{
                 menor_salario = contador;
             
         }}
-    printf("\n Funcionario com o maior salario:\n Cargo: %s\t Salario: %f\t",pessoa[maior_salario].cargo, pessoa[maior_salario].salario);
-    printf("\nFuncionario com menor salario:\n Cargo:%s\t Salario:%f\t",pessoa[menor_salario].cargo, pessoa[menor_salario].salario);
+    printf("\n Funcionario com o maior salario:\n Cargo: %s\n Salario: %.2f\n",pessoa[maior_salario].cargo, pessoa[maior_salario].salario);
+    printf("\nFuncionario com menor salario:\n Cargo:%s\n Salario:%.2f\n",pessoa[menor_salario].cargo, pessoa[menor_salario].salario);
     }
 
 int main(void){
-    int qunat;
-    printf("Informe a quantidade de funcionarios que deseja cadastrar:\n");
-        scanf("%d",&qunat);
-    Funcionario pessoa[qunat];
+    int quant;
+    float novo_salario;
+    printf("\nInforme a quantidade de funcionarios que deseja cadastrar:\n");
+        scanf("%d",&quant);
+    Funcionario pessoa[quant];
     int contador;
-    for(contador = 0; contador < qunat; contador++){
+    for(contador = 0; contador < quant; contador++){
         preencher(&pessoa[contador]);
     }
-    for(contador = 0; contador < qunat; contador++){
+    for(contador = 0; contador < quant; contador++){
         imprimir(&pessoa[contador]);
     }
-        alterar_salario(&pessoa[0],1000);
-   
+    maior_menor(pessoa,quant);
+
+    printf("\nInforme o novo salario do funcionario 1:\n");
+        scanf("%f",&novo_salario);
+    alterar_salario(&pessoa[0],novo_salario);
+    printf("novo salario do funcionario 1 %.2f:\n",pessoa[0].salario);
+    return 0;
 }
