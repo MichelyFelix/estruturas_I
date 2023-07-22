@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 10//constante
-//Michely
+
 typedef struct aluno{//estrutura do tipo aluno
     int matricula; 
     char nome_aluno[81]; 
