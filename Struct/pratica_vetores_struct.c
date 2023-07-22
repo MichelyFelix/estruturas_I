@@ -1,11 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MAX 10//constante
+#define MAX 100//constante
 
 typedef struct aluno{//estrutura do tipo aluno
     int matricula; 
     char nome_aluno[81]; 
-    char endereço[121]; 
+    char endereco[121]; 
     char telefone[21]; 
 }Aluno;
 
@@ -29,8 +29,8 @@ void preenche (int quant, Aluno** tabela, int contador){/*Função que aloca esp
     scanf("%d", &tabela[contador]->matricula);
     printf("Entre com o nome: ");
     scanf(" %80[^\n]", tabela[contador]->nome_aluno);
-    printf("Entre com o endereço: ");
-    scanf(" %120[^\n]", tabela[contador]->endereço);
+    printf("Entre com o endereco: ");
+    scanf(" %120[^\n]", tabela[contador]->endereco);
     printf("Entre com o telefone: ");
     scanf(" %20[^\n]", tabela[contador]->telefone);
 }
@@ -56,7 +56,7 @@ void imprime (int quant, Aluno ** tabela, int contador){//Função que imprime o
     if (tabela[contador] != NULL){
         printf("Matricula: %d\n", tabela[contador]->matricula);
         printf("Nome: %s\n", tabela[contador]->nome_aluno);
-        printf("Endereço: %s\n", tabela[contador]->endereço);
+        printf("Endereco: %s\n", tabela[contador]->endereco);
         printf("Telefone: %s\n", tabela[contador]->telefone);
     }
 }
@@ -84,4 +84,3 @@ int main(void){
     
     return 0;
 }
-
