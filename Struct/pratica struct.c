@@ -19,7 +19,7 @@ int main(void){
         scanf("%f", &var_pessoa[indice].RG);
     printf("informe a altura:\n");
         scanf("%f", &var_pessoa[indice].altura);
-        //esta incompleto
+       
     }
     for(indice = 0; indice<2; indice++){
         printf("\nos dados obtidos foram:\n");
