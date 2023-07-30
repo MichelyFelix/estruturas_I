@@ -38,7 +38,7 @@ void buscar_fruta(Fruta*fruta, int quant, char*nome_fruta){
     int achou = 0;
     int contador;
 for(contador = 0; contador < quant; contador++){//função usada para comparar o nome das frutas 
- if (strcmp(fruta[contador].nome,nome_fruta) == 0){
+ if (strcmp(fruta[contador].nome,nome_fruta) == 0){//se as string forem iguais a função atrcmp retorna 0
     printf("\nFruta %d\n", contador + 1);
     printf("Nome: %s\n", fruta[contador].nome);
     printf("Cor: %s\n", fruta[contador].cor);
