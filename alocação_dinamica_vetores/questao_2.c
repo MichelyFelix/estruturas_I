@@ -17,7 +17,7 @@ int main(void){
     printf("Informe o gabarito da prova:\n");
         scanf("%s", gabarito);
     if(strlen (gabarito) != quant_questoes){//a função strlen compara o tamanho
-        printf("O numero de caracteries do gabarito nao corresponde a quantidade que questoes!");
+        printf("O numero de caracteries do gabarito nao corresponde a quantidade de questoes!");
         exit(1);
     }
     float aprovados = 0.0;
