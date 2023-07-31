@@ -9,7 +9,7 @@ int main(void){
     int quant_questoes;
     printf("Informe a quantidade de questoes da prova:\n");
         scanf("%d",&quant_questoes);
-        char *gabarito = (char*)calloc((quant_questoes + 1),sizeof(char));
+        char *gabarito = (char*)calloc((quant_questoes + 1),sizeof(char));// quant_questoes + 1 por causa do /0
         if (gabarito == NULL){
             printf("erro de alocacao");
             exit(1);
@@ -24,7 +24,7 @@ int main(void){
     for(int contador = 0; contador < alunos; contador++){
 
     char *resposta = (char*)calloc((quant_questoes + 1),sizeof(char));
-    if (gabarito == NULL){
+    if (resposta == NULL){
             printf("erro de alocacao");
             exit(1);
         }
