@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+typedef struct professor{
+char nome[100];
+char disciplina[50];
+int horas;
+}Professor;
+
+void preenche(Professor*dados){
+
+    printf("Informe o nome do professor:\n");
+    scanf(" %[^\n]", dados->nome);
+    printf("Informe a disciplina:\n");
+    scanf(" %[^\n]", dados->disciplina);
+    printf("Informe o regime de trabalho:\n");
+    scanf("%d", &dados->horas);
+
+}
+
+void imprime(Professor*dados){
+
+    printf("\nDados Obtidos:\n");
+
+    printf("Nome:%s\n", dados->nome);
+    printf("Disciplina:%s\n", dados->disciplina);
+    printf("Regime de trabalho:%d\n", dados->horas);
+
+}
+
+void altera_regime(Professor*horas){
+
+    int novo_valor;
+printf("Informe o novo regime de trabalho:\n");
+scanf("%d",&novo_valor);
+horas->horas = novo_valor;
+
+}
+int main(void){
+
+Professor*professor;
+preenche(professor);
+altera_regime(professor);
+//printf("hora de trabalho atualizada:%d", professor->horas);
+imprime(professor);
+
+return 0;
+}
+
