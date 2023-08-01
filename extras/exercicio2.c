@@ -9,7 +9,7 @@ char *vetor_string(char * string1, char * string2){
 int contador1,contador2;
 int tam1 = strlen(string1);/*saber o tamanho da string*/
 int tam2 = strlen(string2);
-int resultado = tam1 + tam2 + 1;
+int resultado = tam1 + tam2 + 1;//tam1 + tam2 + 1 por causa do /0
 char * result = (char*)malloc(resultado*sizeof(char));
     if(result == NULL){
         exit(1);
@@ -22,7 +22,7 @@ for (contador2 = 0; contador2 < tam2; contador2++){
     result[contador1] = string2[contador2]; 
     contador1++;
 }
-result[contador1] = '\0';
+result[contador1] = '\0';//saber onde é o final da string
 return result;
 }
 
