@@ -25,7 +25,7 @@ if(s == NULL){
     return 1;
 }
 
-while((c = fgetc(e)) != EOF){//le cada  caractere presente no arquivo de entrada 
+while((c = fgetc(e)) != EOF){//lê todos os caractere presente no arquivo de entrada 
     fputc(toupper(c), s);//converte os caracteres para maiusculo 
 }
     //fecha os arquivos de entrada e saida
