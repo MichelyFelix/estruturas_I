@@ -2,8 +2,6 @@
 
 int main(void){
     char  nome_arquivo[50];
-    int c;
-    FILE*fp;
     printf("Informe o nome do arquivo:\n");
     scanf(" %[^\n]", nome_arquivo);
 
