@@ -10,7 +10,7 @@ typedef struct{
 
 int main(void){
 FILE* arquivo;
-arquivo = fopen("dados.txt", "w");
+arquivo = fopen("dados.txt", "wt");
 if(arquivo == NULL){
     printf("Erro!");
     exit(1);
